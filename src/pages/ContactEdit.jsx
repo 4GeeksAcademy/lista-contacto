@@ -40,6 +40,9 @@ export const ContactEdit = () => {
         <h2 className="form-title">Editar Contacto</h2>
         <form onSubmit={(e) => e.preventDefault()}>
           <div className="form-group">
+            <label htmlFor="name" className="label-text">
+              Nombre Completo
+            </label>
             <input
               type="text"
               id="name"
@@ -66,7 +69,7 @@ export const ContactEdit = () => {
 
           <div className="form-group">
             <label htmlFor="phone" className="label-text">
-              Phone
+              Teléfono
             </label>
             <input
               type="tel"
@@ -80,7 +83,7 @@ export const ContactEdit = () => {
 
           <div className="form-group">
             <label htmlFor="address" className="label-text">
-              Address
+              Dirección
             </label>
             <input
               type="text"

@@ -25,7 +25,7 @@ export const ContactCreate = () => {
       <form onSubmit={(e) => e.preventDefault()}>
         <div className="form-group">
           <label htmlFor="name" className="label-text">
-            Full Name
+            Nombre Completo
           </label>
           <input
             type="text"
@@ -53,7 +53,7 @@ export const ContactCreate = () => {
 
         <div className="form-group">
           <label htmlFor="phone" className="label-text">
-            Phone
+            Teléfono
           </label>
           <input
             type="tel"
@@ -67,7 +67,7 @@ export const ContactCreate = () => {
 
         <div className="form-group">
           <label htmlFor="address" className="label-text">
-            Address
+            Dirección
           </label>
           <input
             type="text"
