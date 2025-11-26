@@ -6,33 +6,40 @@ import { router } from "./routes"; // Import the router configuration
 
 export const Context = createContext();
 
-const reducter = (state, action) => {
+const reducter = (store, action) => {
   if (action.type === "CREATE_CONTACT") {
-    const updatedContactList = [...state.contactList, action.value];
-    return { ...store, constacList: updatedContactList };
+    const updatedContactList = [...store.contactList, action.value];
+    return { ...store, contactList: updatedContactList };
   }
   if (action.type === "EDIT_CONTACT") {
-    store.constacList.map((contact, index) => {
+    const updatedContactList = store.contactList.map((contact, index) => {
       if (index === action.position) {
         return action.value;
       }
       return contact;
     });
-    return { ...store, contacList: updatedContactList };
+    return { ...store, contactList: updatedContactList };
   }
 
   if (action.type === "REMOVE_CONTACT") {
-    const updatedContactList = store.contacList.filter((_, index) => {
+    const updatedContactList = store.contactList.filter((_, index) => {
       return action.position !== index;
     });
-    return { ...store, constacList: updatedContactList };
+    return { ...store, contactList: updatedContactList };
   }
   return store;
 };
 
 const Main = () => {
   const [store, dispatch] = useReducer(reducter, {
-    constacList: [{ mail: "raulreyes2@gmail.com" }],
+    contactList: [
+      {
+        name: "",
+        email: "ejemplo@mail.com",
+        Phone: "",
+        Adress: "",
+      },
+    ],
   });
 
   return (

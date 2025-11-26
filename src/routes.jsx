@@ -31,7 +31,7 @@ export const router = createBrowserRouter(
     <>
       <Route element={<ContactList />} path="/" />
       <Route element={<ContactCreate />} path="/create" />
-      <Route element={<ContactEdit />} path="/edit" />
+      <Route element={<ContactEdit />} path="/edit/:position" />
     </>
   )
 );
